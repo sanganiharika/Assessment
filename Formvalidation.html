@@ -1,0 +1,145 @@
+<html>
+	<head>
+		<script>
+			function check_validate() {
+				var fname =document.forms["RegForm"]["FName"];
+				var lname =document.forms["RegForm"]["LName"];
+				var dob = document.forms["RegForm"]["date"];
+				var coutry =document.forms["RegForm"]["country"];
+				var gnder = document.forms["RegForm"]["gender"];
+				var prof = document.forms["RegForm"]["profession"];
+				var email = document.forms["RegForm"]["EMail"];
+				var phone = document.forms["RegForm"]["mobile"];
+				
+
+				if (fname.value == "") {
+					window.alert("Please enter your first name.");
+					fname.focus();
+					return false;
+				}
+
+				if (lname.value == "") {
+					window.alert("Please enter your last name.");
+					lname.focus();
+					return false;
+				}
+
+				if (coutry.selectedIndex < 1) {
+					alert("Please enter your country.");
+					coutry.focus();
+					return false;
+				}
+
+				if (gnder.selectedIndex < 1) {
+					alert("Please enter your country.");
+					gnder.focus();
+					return false;
+				}
+				if (prof.value == "") {
+					window.alert("Please enter your profession.");
+					prof.focus();
+					return false;
+				}
+
+				if (email.value == "") {
+					window.alert(
+					"Please enter a valid e-mail address.");
+					email.focus();
+					return false;
+				}
+
+				if (phone.value == "") {
+					window.alert(
+					"Please enter your mobile number.");
+					phone.focus();
+					return false;
+				}
+
+				
+				
+				return true;
+			}
+		</script>
+
+		<style>
+			div {
+				
+				box-sizing: border-box;
+				width: 100%;
+				border: 100px solid black;
+				float: left;
+				align-content: center;
+				align-items: center;
+				
+				
+			}
+
+			form {
+				margin: 0 auto;
+				width: 600px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<style>
+			*{
+				background-color: lavender;
+			}
+			.submit{
+				background-color: white;
+
+			}
+		</style>
+		<h1 style="text-align: center;">Survey Form</h1>
+		<form name="RegForm" action="/submit.php"
+			onsubmit="return check_validate()" method="post">
+			<p>First Name: <input type="text"
+							size="65" name="FName" /></p>
+			<br />
+			<p>Last Name:<input type="text"
+				size="65" name="LName" /></p>
+				<br/>
+			<p>Date of Birth: <input type="date"
+							size="65" name="date" />
+		</p>
+			<br />
+			<p>
+				Country
+				<select type="text" value="country" name="country">
+					<option>India</option>
+					<option>USA</option>
+					<option>Canada</option>
+					<option>China</option>
+					<option>Others</option>
+				</select>
+			</p>
+			<br />
+			<p> Gender: <input type ="checkbox" size="65" name="gender"/>Male
+			<input type="checkbox" size="65" name="gender"/>Female
+			<br/>
+
+			<p> Profession : <input type="text" size="65" name="profession"/> </p>
+			<br />
+
+			<p>email : <input type="text"
+							size="65" name="EMail" /></p>
+			<br />
+
+			
+			<p>Mobile Number: <input type="text"
+						size="65" name="mobile" /></p>
+			<br />
+
+			
+			<br />
+			
+			<p>
+				<input type="submit"
+					value="Submit" name="Submit" />
+				<input type="reset"
+					value="Reset" name="Reset" />
+			</p>
+		</form>
+	</body>
+</html>
